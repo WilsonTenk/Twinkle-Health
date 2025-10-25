@@ -1,0 +1,164 @@
+/* About Section */
+.about-section {
+  background-color: var(--background-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-text {
+  padding-right: 20px;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.about-features {
+  list-style: none;
+  margin-bottom: 40px;
+}
+
+.about-features li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.about-features li svg {
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+.highlight {
+  position: relative;
+  display: inline-block;
+  color: var(--primary-color);
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--secondary-color);
+  z-index: -1;
+}
+
+.about-images {
+  position: relative;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  height: 400px;
+}
+
+.grid-item {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.grid-item:hover img {
+  transform: scale(1.05);
+}
+
+.item-1 {
+  grid-row: span 2;
+}
+
+.item-2 {
+  grid-column: 2;
+}
+
+.item-3 {
+  grid-column: 2;
+}
+
+.item-4 {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .about-text {
+    padding-right: 0;
+    text-align: center;
+  }
+  
+  .about-description {
+    font-size: 1rem;
+  }
+  
+  .image-grid {
+    height: 300px;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .item-1 {
+    grid-row: span 1;
+  }
+  
+  .item-4 {
+    grid-row: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-content {
+    gap: 30px;
+  }
+  
+  .about-features li {
+    font-size: 0.9rem;
+  }
+  
+  .image-grid {
+    height: 250px;
+    gap: 15px;
+  }
+  
+  .about-features li svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+
